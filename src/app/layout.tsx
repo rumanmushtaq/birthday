@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Birthday Countdown',
-  description: 'A special countdown for a special day',
+  title: 'Birthday Surprise',
+  description: 'A special surprise for your birthday',
 }
 
 export default function RootLayout({
