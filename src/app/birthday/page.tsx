@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ConfettiBackground } from "@/components/confetti-background";
 import { EmojiAnimation } from "@/components/emoji-animation";
 import { PageBackground } from "@/components/page-background";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const emojis = "🎉🎈🎊🎁💖🥳🍰🎂🍾🥂👑🌟✨🎵🎶💃🕺🎸🎷🎺🎹🎨🎭🎬🏆🥇🎯🎰🃏🎴🎊";
 
