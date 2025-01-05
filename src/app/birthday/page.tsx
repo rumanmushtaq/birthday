@@ -5,11 +5,12 @@ import Image from "next/image";
 import { ConfettiBackground } from "@/components/confetti-background";
 import { EmojiAnimation } from "@/components/emoji-animation";
 import { PageBackground } from "@/components/page-background";
+import { useRouter } from "next/router";
 
 const emojis = "🎉🎈🎊🎁💖🥳🍰🎂🍾🥂👑🌟✨🎵🎶💃🕺🎸🎷🎺🎹🎨🎭🎬🏆🥇🎯🎰🃏🎴🎊";
 
 export default function BirthdayPage() {
-
+  const router = useRouter();
 
   return (
     <PageBackground className="bg-gradient-to-br from-pink-400 to-red-300">
@@ -23,7 +24,7 @@ export default function BirthdayPage() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-pink-800">
           Happy Birthday My Love!
         </h1>
-       
+
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <Image
             src="/balloon-left.svg"
@@ -82,6 +83,7 @@ export default function BirthdayPage() {
               className="rounded-lg shadow-lg mx-auto w-full max-w-md"
             />
           </div>
+          <button onClick={() => router.push("/feelings")}>Feelings</button>
           <EmojiAnimation
             emojis={[...emojis]}
             className="text-2xl sm:text-3xl md:text-4xl"
