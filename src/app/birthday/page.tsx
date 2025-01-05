@@ -1,6 +1,4 @@
 "use client";
-
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import Image from "next/image";
@@ -11,7 +9,6 @@ import { PageBackground } from "@/components/page-background";
 const emojis = "🎉🎈🎊🎁💖🥳🍰🎂🍾🥂👑🌟✨🎵🎶💃🕺🎸🎷🎺🎹🎨🎭🎬🏆🥇🎯🎰🃏🎴🎊";
 
 export default function BirthdayPage() {
-  const [isPlaying, setIsPlaying] = useState(false);
 
 
   return (
