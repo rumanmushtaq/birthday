@@ -12,26 +12,7 @@ const emojis = "🎉🎈🎊🎁💖🥳🍰🎂🍾🥂👑🌟✨🎵🎶💃�
 
 export default function BirthdayPage() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audio] = useState(new Audio("/happy-birthday.mp3")); // Create audio instance only once
 
-  useEffect(() => {
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-    };
-  }, [audio]);
-
-  const toggleAudio = () => {
-    if (isPlaying) {
-      audio.pause();
-    } else {
-      audio.loop = true;
-      audio.play().catch((error) => {
-        console.log("Autoplay failed: ", error);
-      });
-    }
-    setIsPlaying(!isPlaying);
-  };
 
   return (
     <PageBackground className="bg-gradient-to-br from-pink-400 to-red-300">
@@ -45,12 +26,7 @@ export default function BirthdayPage() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-pink-800">
           Happy Birthday My Love!
         </h1>
-        <button
-          onClick={toggleAudio}
-          className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded"
-        >
-          {isPlaying ? "Pause Music" : "Play Music"}
-        </button>
+       
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <Image
             src="/balloon-left.svg"

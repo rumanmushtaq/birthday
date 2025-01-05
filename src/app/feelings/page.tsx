@@ -8,30 +8,14 @@ import { PageBackground } from "@/components/page-background";
 
 export default function FeelingsPage() {
   const [showMessage, setShowMessage] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [audio] = useState(new Audio("/nain.mp3")); // Create audio instance only once
 
   useEffect(() => {
     const timer = setTimeout(() => setShowMessage(true), 1000);
 
     return () => {
       clearTimeout(timer);
-      audio.pause();
-      audio.currentTime = 0;
     };
-  }, [audio]);
-
-  const toggleAudio = () => {
-    if (isPlaying) {
-      audio.pause();
-    } else {
-      audio.loop = true;
-      audio.play().catch((error) => {
-        console.log("Autoplay failed: ", error);
-      });
-    }
-    setIsPlaying(!isPlaying);
-  };
+  }, []);
 
   return (
     <PageBackground className="bg-gradient-to-br from-pink-200 to-red-200">
@@ -42,12 +26,6 @@ export default function FeelingsPage() {
         transition={{ duration: 0.5 }}
         className="relative w-full max-w-4xl bg-white bg-opacity-80 rounded-lg shadow-xl p-4 sm:p-8"
       >
-        <button
-          onClick={toggleAudio}
-          className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded"
-        >
-          {isPlaying ? "Pause Music" : "Play Music"}
-        </button>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center text-pink-600">
           My Feelings For You
         </h1>
